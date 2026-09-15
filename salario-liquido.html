@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salário líquido | ContaSimples</title>
+<meta name="description" content="Calcule o salário líquido 2026 com as tabelas atuais de INSS e IRRF, incluindo dependentes e a redução da Lei 15.270/2025.">
+<link rel="canonical" href="https://meucontasimples.com.br/ferramentas/salario-liquido.html">
+<meta property="og:title" content="Salário líquido | ContaSimples">
+<meta property="og:description" content="Calcule o salário líquido 2026 com as tabelas atuais de INSS e IRRF, incluindo dependentes e a redução da Lei 15.270/2025.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ContaSimples - Salário líquido","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Calcule o salário líquido 2026 com as tabelas atuais de INSS e IRRF."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como é calculado o salário líquido em 2026?","acceptedAnswer":{"@type":"Answer","text":"O salário líquido é o salário bruto menos o desconto de INSS (alíquotas progressivas de 7,5% a 14%), menos o Imposto de Renda Retido na Fonte (IRRF, calculado sobre o salário já sem o INSS e sem a dedução por dependentes) e menos outros descontos, como vale-transporte, plano de saúde ou adiantamentos."}},{"@type":"Question","name":"Quem ganha até R$ 5.000 paga Imposto de Renda em 2026?","acceptedAnswer":{"@type":"Answer","text":"Na prática, não. A Lei 15.270/2025 criou uma redução que zera o IRRF para quem tem rendimento bruto de até R$ 5.000 por mês. Entre R$ 5.000,01 e R$ 7.350,00 a redução é parcial e decrescente. Acima de R$ 7.350,00 não há redução extra."}},{"@type":"Question","name":"O desconto de INSS é sobre o salário todo ou por faixa?","acceptedAnswer":{"@type":"Answer","text":"É por faixa (cálculo progressivo), assim como o Imposto de Renda: cada parte do salário é descontada com a alíquota da sua faixa (7,5%, 9%, 12% ou 14%), e não uma alíquota única sobre o valor total."}}]}</script>
+</head><body>
+<header><div class="nav"><a class="brand" href="/">Conta<span>Simples</span></a><nav><a href="/">Início</a><a href="/ferramentas.html">Ferramentas</a><a href="/sobre.html">Sobre</a></nav></div></header>
+<main><section class="toolhead"><span class="pill">Finanças</span><h1>Calculadora de salário líquido 2026</h1><p>Calcule quanto sobra do salário com as tabelas de INSS e IRRF vigentes em 2026, incluindo dependentes.</p></section><section class="toolbox"><div class="grid2"><label>Salário bruto (R$)<input id="sal" type="number" step="0.01"></label><label>Número de dependentes<input id="dep" type="number" min="0" value="0"></label><label>Outros descontos (R$)<input id="out" type="number" step="0.01" value="0"></label></div>
+<button onclick="calc()">Calcular</button><div id="result" class="result"></div>
+<script>
+function calcINSS(s){
+  const faixas=[[1621.00,.075],[2902.84,.09],[4354.27,.12],[8475.55,.14]];
+  let base=Math.min(s,8475.55),inss=0,anterior=0;
+  for(const [teto,aliq] of faixas){
+    if(base>anterior){ inss += (Math.min(base,teto)-anterior)*aliq; anterior=teto; }
+  }
+  return Math.round(inss*100)/100;
+}
+function calcIR(baseIR, salarioBruto){
+  let ir=0;
+  if(baseIR<=2428.80) ir=0;
+  else if(baseIR<=2826.65) ir=baseIR*.075-182.16;
+  else if(baseIR<=3751.05) ir=baseIR*.15-394.16;
+  else if(baseIR<=4664.68) ir=baseIR*.225-675.49;
+  else ir=baseIR*.275-908.73;
+  ir=Math.max(0,ir);
+  let redutor=0;
+  if(salarioBruto<=5000) redutor=ir;
+  else if(salarioBruto<=7350) redutor=Math.max(0,978.62-0.133145*salarioBruto);
+  ir=Math.max(0, ir-redutor);
+  return Math.round(ir*100)/100;
+}
+function calc(){
+  let s=+document.getElementById('sal').value||0, dep=+document.getElementById('dep').value||0, o=+document.getElementById('out').value||0;
+  let inss=calcINSS(s);
+  let baseIR=Math.max(0, s-inss-dep*189.59);
+  let ir=calcIR(baseIR, s);
+  let liquido=s-inss-ir-o;
+  document.getElementById('result').innerHTML=`<b>Salário líquido estimado: R$ ${liquido.toFixed(2).replace('.',',')}</b><br>INSS: R$ ${inss.toFixed(2).replace('.',',')}<br>IRRF: R$ ${ir.toFixed(2).replace('.',',')}<br><small>Tabelas de 2026 (INSS progressivo + IRRF com redução da Lei 15.270/2025). Não considera pensão alimentícia, desconto simplificado alternativo ou convenções coletivas específicas — confirme no holerite oficial.</small>`;
+}
+</script></section><div class="adslot">Espaço reservado para publicidade</div><section class="content"><h2>Como funciona o cálculo do salário líquido em 2026</h2><p>O salário líquido é o valor que efetivamente cai na conta depois de todos os descontos obrigatórios. Em 2026, esse cálculo passa por duas etapas principais: primeiro o desconto de INSS, que é progressivo (7,5% a 14%, conforme a faixa salarial, até o teto de R$ 8.475,55); depois o Imposto de Renda Retido na Fonte (IRRF), calculado sobre o salário já sem o INSS e sem a dedução de R$ 189,59 por dependente.</p>
+<h3>A isenção de até R$ 5.000 em 2026</h3><p>Desde a Lei 15.270/2025, quem tem rendimento bruto de até R$ 5.000 por mês fica, na prática, isento de Imposto de Renda. Entre R$ 5.000,01 e R$ 7.350,00 existe uma redução parcial e decrescente, para evitar um salto brusco no imposto. Acima de R$ 7.350,00, a tabela progressiva tradicional se aplica sem redução extra.</p>
+<h3>O que esta calculadora não inclui</h3><p>Este é um modelo simplificado: ele não considera pensão alimentícia, contribuição sindical, o desconto simplificado alternativo de IRRF, adicional de insalubridade/periculosidade ou convenções coletivas de categorias específicas. Use o resultado como estimativa e confira sempre o holerite oficial da sua empresa.</p></section>
+<section class="money-engine" id="related-tools">
+  <div class="money-kicker">PRÓXIMO PASSO</div>
+  <h2>Não pare no resultado</h2>
+  <p>Use esta ferramenta como ponto de partida. Compare, simule e confira outras variáveis antes de tomar uma decisão.</p>
+  <div class="related-grid"><a class="related-card" href="/ferramentas.html"><strong>Ferramentas</strong><span>Veja também →</span></a><a class="related-card" href="/sobre.html"><strong>Sobre</strong><span>Veja também →</span></a><a class="related-card" href="/privacidade.html"><strong>Privacidade</strong><span>Veja também →</span></a><a class="related-card" href="/termos.html"><strong>Termos</strong><span>Veja também →</span></a></div>
+</section>
+
+</main>
+<footer><div><b>ContaSimples</b><p>Ferramentas simples para decisões do dia a dia.</p></div><div><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/contato.html">Contato</a></div></footer>
+</body></html>

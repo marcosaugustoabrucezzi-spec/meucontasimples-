@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://meucontasimples.com.br/sitemap.xml

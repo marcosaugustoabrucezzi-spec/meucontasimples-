@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Margem de lucro | ContaSimples</title>
+<meta name="description" content="Calcule a margem de lucro percentual de uma venda a partir do preço e do custo.">
+<link rel="canonical" href="https://meucontasimples.com.br/ferramentas/margem-lucro.html">
+<meta property="og:title" content="Margem de lucro | ContaSimples">
+<meta property="og:description" content="Calcule a margem de lucro percentual de uma venda a partir do preço e do custo.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ContaSimples - Margem de lucro","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Calcule a margem de lucro percentual de uma venda."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual a diferença entre margem de lucro e markup?","acceptedAnswer":{"@type":"Answer","text":"Margem de lucro é o percentual de lucro calculado sobre o preço de venda (lucro ÷ preço de venda). Markup é o percentual aplicado sobre o custo para chegar ao preço de venda (preço de venda ÷ custo). São cálculos diferentes e não podem ser usados como sinônimos ao precificar."}},{"@type":"Question","name":"Que margem de lucro é considerada boa?","acceptedAnswer":{"@type":"Answer","text":"Varia muito por setor: comércio varejista costuma trabalhar com margens de 10% a 30%, enquanto serviços e produtos digitais podem ter margens acima de 50%. O ideal é comparar com a média do seu segmento e considerar suas despesas fixas."}},{"@type":"Question","name":"A margem de lucro já inclui impostos e despesas?","acceptedAnswer":{"@type":"Answer","text":"Não nesta calculadora simples, que considera apenas preço de venda menos custo direto. Para uma margem líquida real, é preciso descontar também impostos, taxas de cartão, comissões e despesas operacionais do período."}}]}</script>
+</head><body>
+<header><div class="nav"><a class="brand" href="/">Conta<span>Simples</span></a><nav><a href="/">Início</a><a href="/ferramentas.html">Ferramentas</a><a href="/sobre.html">Sobre</a></nav></div></header>
+<main><section class="toolhead"><span class="pill">Negócios</span><h1>Calculadora de margem de lucro</h1><p>Descubra o lucro e a margem percentual de uma venda.</p></section><section class="toolbox"><div class="grid2"><label>Preço de venda (R$)<input id="v" type="number" step="0.01"></label><label>Custo total (R$)<input id="c" type="number" step="0.01"></label></div><button onclick="calc()">Calcular</button><div id="result" class="result"></div><script>function calc(){let v=+document.getElementById('v').value||0,c=+document.getElementById('c').value||0;let l=v-c;document.getElementById('result').innerHTML=`Lucro: <b>R$ ${l.toFixed(2).replace('.',',')}</b><br>Margem: <b>${(v?l/v*100:0).toFixed(2).replace('.',',')}%</b>`}</script></section><div class="adslot">Espaço reservado para publicidade</div><section class="content"><h2>Como calcular a margem de lucro</h2><p>A margem de lucro é o percentual do preço de venda que sobra como lucro depois de descontar o custo. A fórmula é: margem = (preço de venda − custo) ÷ preço de venda × 100. É uma das métricas mais usadas para avaliar se um produto ou serviço está sendo vendido por um preço saudável para o negócio.</p>
+<h3>Margem não é a mesma coisa que markup</h3><p>É comum confundir os dois conceitos. A margem de lucro é calculada sobre o preço de venda; o markup é calculado sobre o custo. Um markup de 100% (dobrar o custo) resulta em uma margem de 50%, não de 100% — por isso vale usar a <a href="/ferramentas/markup.html">calculadora de markup</a> quando o ponto de partida for o custo, não o preço final.</p>
+<h3>Cuidado com o que fica de fora</h3><p>Esta calculadora usa apenas custo direto e preço de venda. Para decisões de precificação mais sérias, inclua também impostos sobre a venda, taxas de cartão/marketplace, frete e despesas fixas rateadas — senão a margem "real" do negócio pode ser bem menor do que a calculada aqui.</p></section>
+<section class="money-engine" id="related-tools">
+  <div class="money-kicker">PRÓXIMO PASSO</div>
+  <h2>Não pare no resultado</h2>
+  <p>Use esta ferramenta como ponto de partida. Compare, simule e confira outras variáveis antes de tomar uma decisão.</p>
+  <div class="related-grid"><a class="related-card" href="/ferramentas.html"><strong>Ferramentas</strong><span>Veja também →</span></a><a class="related-card" href="/sobre.html"><strong>Sobre</strong><span>Veja também →</span></a><a class="related-card" href="/privacidade.html"><strong>Privacidade</strong><span>Veja também →</span></a><a class="related-card" href="/termos.html"><strong>Termos</strong><span>Veja também →</span></a></div>
+</section>
+
+</main>
+<footer><div><b>ContaSimples</b><p>Ferramentas simples para decisões do dia a dia.</p></div><div><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/contato.html">Contato</a></div></footer>
+</body></html>

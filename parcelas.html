@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parcelas de empréstimo | ContaSimples</title>
+<meta name="description" content="Simule o valor da parcela de um empréstimo com juros compostos e veja o total pago.">
+<link rel="canonical" href="https://meucontasimples.com.br/ferramentas/parcelas.html">
+<meta property="og:title" content="Parcelas de empréstimo | ContaSimples">
+<meta property="og:description" content="Simule o valor da parcela de um empréstimo com juros compostos e veja o total pago.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ContaSimples - Parcelas de empréstimo","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Simule o valor da parcela de um empréstimo com juros compostos."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como saber se um empréstimo está caro?","acceptedAnswer":{"@type":"Answer","text":"Compare o CET (Custo Efetivo Total) anual entre instituições, não apenas o valor da parcela. Duas ofertas com a mesma parcela podem ter prazos e juros totais bem diferentes."}},{"@type":"Question","name":"Vale a pena quitar o empréstimo antecipadamente?","acceptedAnswer":{"@type":"Answer","text":"Na maioria dos casos sim, porque a quitação antecipada reduz o saldo devedor e os juros futuros, com desconto proporcional garantido por lei (Código de Defesa do Consumidor). Confirme as condições específicas com a instituição financeira."}},{"@type":"Question","name":"Qual a diferença entre juros simples e compostos numa parcela?","acceptedAnswer":{"@type":"Answer","text":"No empréstimo com juros compostos, os juros incidem sobre o saldo devedor atualizado a cada período, não apenas sobre o valor original. Por isso o total pago cresce mais rápido quanto maior o prazo e a taxa mensal."}}]}</script>
+</head><body>
+<header><div class="nav"><a class="brand" href="/">Conta<span>Simples</span></a><nav><a href="/">Início</a><a href="/ferramentas.html">Ferramentas</a><a href="/sobre.html">Sobre</a></nav></div></header>
+<main><section class="toolhead"><span class="pill">Finanças</span><h1>Simulador de parcelas de empréstimo</h1><p>Veja o valor da parcela e o total pago em um empréstimo com juros compostos.</p></section><section class="toolbox"><div class="grid2"><label>Valor (R$)<input id="v" type="number" step="0.01"></label><label>Juros ao mês (%)<input id="j" type="number" step="0.01"></label><label>Número de parcelas<input id="n" type="number"></label></div><button onclick="calc()">Simular</button><div id="result" class="result"></div><script>function calc(){let v=+document.getElementById('v').value||0,j=(+document.getElementById('j').value||0)/100,n=+document.getElementById('n').value||0;let p=j? v*j/(1-Math.pow(1+j,-n)):v/n;document.getElementById('result').innerHTML=`Parcela estimada: <b>R$ ${p.toFixed(2).replace('.',',')}</b><br>Total: R$ ${(p*n).toFixed(2).replace('.',',')}<br>Juros pagos: R$ ${(p*n-v).toFixed(2).replace('.',',')}`}</script></section><div class="adslot">Espaço reservado para publicidade</div><section class="content"><h2>Como é calculada a parcela de um empréstimo</h2><p>A parcela de um empréstimo com juros compostos é calculada de forma que, ao longo de todas as parcelas, o valor emprestado mais os juros sejam totalmente quitados. Quanto maior o prazo, menor tende a ser a parcela mensal — mas maior o total de juros pagos ao final.</p>
+<h3>O que observar antes de contratar</h3><p>Além da taxa de juros mensal, verifique o CET (Custo Efetivo Total) anual, que inclui tarifas e seguros. Compare sempre o total pago no fim do contrato, não apenas o valor da parcela — parcelas menores em prazos mais longos costumam custar mais juros no total.</p>
+<h3>Renegociação e portabilidade</h3><p>Se as parcelas estiverem pesando no orçamento, vale considerar a portabilidade de crédito (transferir a dívida para outra instituição com juros menores) ou renegociar diretamente com o credor atual antes de atrasar pagamentos.</p></section>
+<section class="money-engine" id="related-tools">
+  <div class="money-kicker">PRÓXIMO PASSO</div>
+  <h2>Não pare no resultado</h2>
+  <p>Use esta ferramenta como ponto de partida. Compare, simule e confira outras variáveis antes de tomar uma decisão.</p>
+  <div class="related-grid"><a class="related-card" href="/ferramentas.html"><strong>Ferramentas</strong><span>Veja também →</span></a><a class="related-card" href="/sobre.html"><strong>Sobre</strong><span>Veja também →</span></a><a class="related-card" href="/privacidade.html"><strong>Privacidade</strong><span>Veja também →</span></a><a class="related-card" href="/termos.html"><strong>Termos</strong><span>Veja também →</span></a></div>
+</section>
+
+</main>
+<footer><div><b>ContaSimples</b><p>Ferramentas simples para decisões do dia a dia.</p></div><div><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/contato.html">Contato</a></div></footer>
+</body></html>

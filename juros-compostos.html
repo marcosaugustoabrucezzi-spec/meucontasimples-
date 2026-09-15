@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Juros compostos | ContaSimples</title>
+<meta name="description" content="Simule o crescimento de um investimento com juros compostos e aportes mensais.">
+<link rel="canonical" href="https://meucontasimples.com.br/ferramentas/juros-compostos.html">
+<meta property="og:title" content="Juros compostos | ContaSimples">
+<meta property="og:description" content="Simule o crescimento de um investimento com juros compostos e aportes mensais.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ContaSimples - Juros compostos","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Simule o crescimento de um investimento com juros compostos."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual a diferença entre juros simples e compostos?","acceptedAnswer":{"@type":"Answer","text":"Nos juros simples, o rendimento incide sempre sobre o capital inicial. Nos juros compostos, o rendimento de cada período passa a fazer parte do capital do período seguinte, gerando 'juros sobre juros' — por isso o crescimento é mais acelerado no longo prazo."}},{"@type":"Question","name":"Essa simulação já desconta o Imposto de Renda sobre investimentos?","acceptedAnswer":{"@type":"Answer","text":"Não. O resultado mostra o montante bruto. Investimentos de renda fixa geralmente têm IR regressivo (de 22,5% a 15% conforme o prazo) e podem ter come-cotas, dependendo do tipo de aplicação."}},{"@type":"Question","name":"Fazer aportes mensais faz muita diferença no resultado?","acceptedAnswer":{"@type":"Answer","text":"Sim, geralmente é o fator que mais pesa no resultado final em prazos longos, muitas vezes mais do que a diferença entre taxas de juros parecidas. Aportar regularmente costuma valer mais do que esperar uma taxa melhor para começar."}}]}</script>
+</head><body>
+<header><div class="nav"><a class="brand" href="/">Conta<span>Simples</span></a><nav><a href="/">Início</a><a href="/ferramentas.html">Ferramentas</a><a href="/sobre.html">Sobre</a></nav></div></header>
+<main><section class="toolhead"><span class="pill">Finanças</span><h1>Calculadora de juros compostos</h1><p>Veja quanto um investimento pode crescer com aportes mensais e juros compostos.</p></section><section class="toolbox"><div class="grid2"><label>Capital inicial (R$)<input id="v" type="number" step="0.01"></label><label>Taxa por período (%)<input id="j" type="number" step="0.01"></label><label>Número de períodos<input id="n" type="number"></label><label>Aporte por período (R$)<input id="a" type="number" value="0"></label></div><button onclick="calc()">Calcular</button><div id="result" class="result"></div><script>function calc(){let v=+document.getElementById('v').value||0,j=(+document.getElementById('j').value||0)/100,n=+document.getElementById('n').value||0,a=+document.getElementById('a').value||0;let total=v*Math.pow(1+j,n)+(j? a*(Math.pow(1+j,n)-1)/j:a*n);let investido=v+a*n;document.getElementById('result').innerHTML=`Montante estimado: <b>R$ ${total.toFixed(2).replace('.',',')}</b><br>Total investido: R$ ${investido.toFixed(2).replace('.',',')}<br>Rendimento bruto: R$ ${(total-investido).toFixed(2).replace('.',',')}<br><small>Valor bruto, sem desconto de Imposto de Renda.</small>`}</script></section><div class="adslot">Espaço reservado para publicidade</div><section class="content"><h2>Como funcionam os juros compostos</h2><p>Nos juros compostos, o rendimento de cada período é somado ao capital antes de calcular o rendimento do período seguinte — é o famoso "juros sobre juros". A fórmula usada aqui é M = C×(1+i)ⁿ para o capital inicial, mais a soma dos aportes mensais também rendendo juros compostos ao longo do tempo.</p>
+<h3>Por que o tempo importa mais que a taxa</h3><p>Em prazos longos, pequenas diferenças de taxa fazem menos diferença do que começar cedo e manter aportes regulares. Um investimento com aportes mensais consistentes por 10 anos costuma superar um valor maior aplicado de uma vez só por um prazo mais curto.</p>
+<h3>O que falta considerar</h3><p>Este simulador mostra o valor bruto. Para saber o valor líquido real, é preciso descontar o Imposto de Renda (regressivo em renda fixa, de 22,5% até 6 meses a 15% acima de 2 anos) e, em alguns fundos, o come-cotas semestral.</p></section>
+<section class="money-engine" id="related-tools">
+  <div class="money-kicker">PRÓXIMO PASSO</div>
+  <h2>Não pare no resultado</h2>
+  <p>Use esta ferramenta como ponto de partida. Compare, simule e confira outras variáveis antes de tomar uma decisão.</p>
+  <div class="related-grid"><a class="related-card" href="/ferramentas.html"><strong>Ferramentas</strong><span>Veja também →</span></a><a class="related-card" href="/sobre.html"><strong>Sobre</strong><span>Veja também →</span></a><a class="related-card" href="/privacidade.html"><strong>Privacidade</strong><span>Veja também →</span></a><a class="related-card" href="/termos.html"><strong>Termos</strong><span>Veja também →</span></a></div>
+</section>
+
+</main>
+<footer><div><b>ContaSimples</b><p>Ferramentas simples para decisões do dia a dia.</p></div><div><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/contato.html">Contato</a></div></footer>
+</body></html>

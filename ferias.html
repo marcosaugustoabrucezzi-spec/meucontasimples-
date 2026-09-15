@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de férias | ContaSimples</title>
+<meta name="description" content="Calcule férias + 1/3 constitucional a partir do salário bruto e dos dias de férias.">
+<link rel="canonical" href="https://meucontasimples.com.br/ferramentas/ferias.html">
+<meta property="og:title" content="Calculadora de férias | ContaSimples">
+<meta property="og:description" content="Calcule férias + 1/3 constitucional a partir do salário bruto e dos dias de férias.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ContaSimples - Calculadora de férias","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Calcule férias + 1/3 constitucional a partir do salário bruto."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona o 1/3 de férias?","acceptedAnswer":{"@type":"Answer","text":"Todo trabalhador CLT recebe, além do valor das férias, um adicional de um terço constitucional sobre esse valor. Ou seja: se as férias valem R$ 3.000, o adicional é de R$ 1.000, totalizando R$ 4.000 brutos."}},{"@type":"Question","name":"É possível vender parte das férias?","acceptedAnswer":{"@type":"Answer","text":"Sim, o chamado 'abono pecuniário' permite vender até 1/3 do período de férias (10 dias, em férias de 30 dias), recebendo o valor correspondente em dinheiro em vez de descansar esses dias."}},{"@type":"Question","name":"O valor das férias tem desconto de INSS e IRRF?","acceptedAnswer":{"@type":"Answer","text":"Sim, o valor bruto das férias sofre os mesmos descontos de INSS e Imposto de Renda que o salário normal. Esta calculadora mostra o valor bruto; para saber o líquido, use a calculadora de salário líquido informando esse valor."}}]}</script>
+</head><body>
+<header><div class="nav"><a class="brand" href="/">Conta<span>Simples</span></a><nav><a href="/">Início</a><a href="/ferramentas.html">Ferramentas</a><a href="/sobre.html">Sobre</a></nav></div></header>
+<main><section class="toolhead"><span class="pill">Trabalho</span><h1>Calculadora de férias + 1/3</h1><p>Calcule o valor bruto de férias com o adicional de 1/3 constitucional.</p></section><section class="toolbox"><div class="grid2"><label>Salário bruto (R$)<input id="s" type="number" step="0.01"></label><label>Dias de férias<input id="d" type="number" value="30"></label></div><button onclick="calc()">Calcular</button><div id="result" class="result"></div>
+<script>function calc(){let s=+document.getElementById('s').value||0,d=+document.getElementById('d').value||0;let base=s*d/30,ter=base/3;document.getElementById('result').innerHTML=`Base: R$ ${base.toFixed(2).replace('.',',')}<br><b>Total bruto com 1/3: R$ ${(base+ter).toFixed(2).replace('.',',')}</b><br><small>Valor bruto, antes de INSS e IRRF.</small>`}</script></section><div class="adslot">Espaço reservado para publicidade</div><section class="content"><h2>Como calcular férias + 1/3</h2><p>O valor das férias é proporcional aos dias de descanso: para 30 dias completos, o trabalhador recebe o salário integral; para períodos menores, o valor é proporcional (salário ÷ 30 × dias). Sobre essa base, a Constituição garante um adicional de 1/3, pensado para ajudar a custear o período de descanso.</p>
+<h3>Férias vencidas x proporcionais</h3><p>Férias vencidas são aquelas já completadas (após 12 meses de trabalho) e ainda não gozadas. Férias proporcionais são calculadas com base nos meses trabalhados desde a última aquisição, geralmente usadas em cálculos de rescisão.</p>
+<h3>Abono pecuniário (venda de férias)</h3><p>O trabalhador pode optar por vender até 10 dos 30 dias de férias, recebendo o valor correspondente sem o desconto de INSS/IRRF sobre essa parcela, e descansando os 20 dias restantes.</p></section>
+<section class="money-engine" id="related-tools">
+  <div class="money-kicker">PRÓXIMO PASSO</div>
+  <h2>Não pare no resultado</h2>
+  <p>Use esta ferramenta como ponto de partida. Compare, simule e confira outras variáveis antes de tomar uma decisão.</p>
+  <div class="related-grid"><a class="related-card" href="/ferramentas.html"><strong>Ferramentas</strong><span>Veja também →</span></a><a class="related-card" href="/sobre.html"><strong>Sobre</strong><span>Veja também →</span></a><a class="related-card" href="/privacidade.html"><strong>Privacidade</strong><span>Veja também →</span></a><a class="related-card" href="/termos.html"><strong>Termos</strong><span>Veja também →</span></a></div>
+</section>
+
+</main>
+<footer><div><b>ContaSimples</b><p>Ferramentas simples para decisões do dia a dia.</p></div><div><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/contato.html">Contato</a></div></footer>
+</body></html>

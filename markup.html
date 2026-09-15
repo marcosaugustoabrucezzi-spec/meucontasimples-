@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Markup | ContaSimples</title>
+<meta name="description" content="Calcule o preço de venda ideal a partir do custo, despesas, impostos e lucro desejado.">
+<link rel="canonical" href="https://meucontasimples.com.br/ferramentas/markup.html">
+<meta property="og:title" content="Markup | ContaSimples">
+<meta property="og:description" content="Calcule o preço de venda ideal a partir do custo, despesas, impostos e lucro desejado.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ContaSimples - Markup","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Calcule o preço de venda a partir do custo, despesas, impostos e lucro desejado."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona o markup divisor?","acceptedAnswer":{"@type":"Answer","text":"O markup divisor calcula o preço de venda dividindo o custo por (1 − soma dos percentuais de despesas, impostos e lucro desejado, todos sobre o preço de venda). É a forma mais usada porque garante que a margem de lucro planejada seja realmente sobre o preço final, não sobre o custo."}},{"@type":"Question","name":"O que acontece se a soma dos percentuais passar de 100%?","acceptedAnswer":{"@type":"Answer","text":"O cálculo não funciona (o divisor fica zero ou negativo). Isso normalmente indica que os percentuais de despesas, impostos e lucro desejado, somados, são inviáveis para aquele custo — é preciso reduzir algum deles ou revisar o custo do produto."}},{"@type":"Question","name":"Markup alto significa produto caro?","acceptedAnswer":{"@type":"Answer","text":"Não necessariamente. Produtos com custo baixo (como acessórios) costumam ter markup percentual alto mesmo com preço final baixo, enquanto produtos de ticket alto podem ter markup percentual menor mas gerar mais lucro em valor absoluto."}}]}</script>
+</head><body>
+<header><div class="nav"><a class="brand" href="/">Conta<span>Simples</span></a><nav><a href="/">Início</a><a href="/ferramentas.html">Ferramentas</a><a href="/sobre.html">Sobre</a></nav></div></header>
+<main><section class="toolhead"><span class="pill">Negócios</span><h1>Calculadora de markup</h1><p>Descubra o preço de venda ideal considerando custo, despesas, impostos e lucro.</p></section><section class="toolbox"><div class="grid2"><label>Custo (R$)<input id="c" type="number" step="0.01"></label><label>Despesas sobre venda (%)<input id="d" type="number" value="0"></label><label>Impostos (%)<input id="i" type="number" value="0"></label><label>Lucro desejado (%)<input id="l" type="number" value="20"></label></div><button onclick="calc()">Calcular</button><div id="result" class="result"></div><script>function calc(){let c=+document.getElementById('c').value||0,d=(+document.getElementById('d').value||0)/100,i=(+document.getElementById('i').value||0)/100,l=(+document.getElementById('l').value||0)/100;let divisor=1-d-i-l;if(divisor<=0){document.getElementById('result').innerHTML=`<b>Percentuais somam 100% ou mais.</b> Reduza despesas, impostos ou lucro desejado para calcular um preço válido.`;return;}let p=c/divisor;document.getElementById('result').innerHTML=`Preço sugerido: <b>R$ ${p.toFixed(2).replace('.',',')}</b><br><small>Markup divisor: ${divisor.toFixed(4)} (equivalente a multiplicar o custo por ${(1/divisor).toFixed(2)})</small>`}</script></section><div class="adslot">Espaço reservado para publicidade</div><section class="content"><h2>Como funciona o cálculo de markup</h2><p>O markup é o índice usado para transformar o custo de um produto ou serviço em preço de venda, cobrindo despesas, impostos e a margem de lucro desejada. O método do markup divisor calcula: preço = custo ÷ (1 − despesas% − impostos% − lucro%), garantindo que todos os percentuais sejam sobre o preço final de venda, e não sobre o custo.</p>
+<h3>Por que usar o divisor e não simplesmente somar percentuais ao custo</h3><p>Somar os percentuais diretamente ao custo (markup multiplicador simples) faz com que a margem de lucro real fique menor do que a planejada, porque os percentuais de despesas e impostos normalmente incidem sobre o preço de venda, não sobre o custo. O markup divisor corrige essa distorção.</p>
+<h3>Exemplo prático</h3><p>Um produto com custo de R$ 100, despesas de 10%, impostos de 8% e lucro desejado de 20% tem divisor de 1 − 0,10 − 0,08 − 0,20 = 0,62. Preço de venda: R$ 100 ÷ 0,62 ≈ R$ 161,29.</p></section>
+<section class="money-engine" id="related-tools">
+  <div class="money-kicker">PRÓXIMO PASSO</div>
+  <h2>Não pare no resultado</h2>
+  <p>Use esta ferramenta como ponto de partida. Compare, simule e confira outras variáveis antes de tomar uma decisão.</p>
+  <div class="related-grid"><a class="related-card" href="/ferramentas.html"><strong>Ferramentas</strong><span>Veja também →</span></a><a class="related-card" href="/sobre.html"><strong>Sobre</strong><span>Veja também →</span></a><a class="related-card" href="/privacidade.html"><strong>Privacidade</strong><span>Veja também →</span></a><a class="related-card" href="/termos.html"><strong>Termos</strong><span>Veja também →</span></a></div>
+</section>
+
+</main>
+<footer><div><b>ContaSimples</b><p>Ferramentas simples para decisões do dia a dia.</p></div><div><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/contato.html">Contato</a></div></footer>
+</body></html>
