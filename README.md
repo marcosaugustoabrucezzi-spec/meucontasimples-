@@ -1,4 +1,4 @@
-# ContaSimples V5 MONEY
+# MeuontaSimples V5 MONEY
 
 Versão orientada a aquisição e monetização. Site estático, rápido e sem dependências externas.
 
